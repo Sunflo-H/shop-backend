@@ -39,9 +39,9 @@ app.get("/", (req, res) => {
 });
 
 // Routes
-app.use("/api/product", productRouter);
+// app.use("/api/product", productRouter);
 
-app.use("/api/category", categoryRouter);
+// app.use("/api/category", categoryRouter);
 
 // Start server
 app.listen(port, () => {
