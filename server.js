@@ -13,12 +13,11 @@ const app = express();
 const port = process.env.PORT || 80;
 
 // 미들웨어 선언
-app.use(cors());
+// app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 // MongoDB connection
-
 async function connectToMongoDB() {
   try {
     console.log("몽고디비 연결 시도!");
@@ -39,7 +38,7 @@ app.get("/", (req, res) => {
 });
 
 // Routes
-// app.use("/api/product", productRouter);
+app.use("/api/product", productRouter);
 
 // app.use("/api/category", categoryRouter);
 
