@@ -38,14 +38,11 @@ exports.getAllProducts = async (req, res) => {
 };
 
 exports.getProductById = async (req, res) => {
-  //   try {
-  //     const product = await Product.findById(req.params.id).populate("category");
-  //     if (!product) {
-  //       return res.status(404).json({ error: "상품을 찾을 수 없습니다." });
-  //     }
-  //     res.status(200).json(product); // 성공적으로 조회된 특정 상품을 클라이언트에게 응답
-  //   } catch (err) {
-  //     console.error("상품 조회 실패:", err);
-  //     res.status(500).json({ error: "상품 조회 실패" });
-  //   }
+  try {
+    const product = await Product.findById(req.params.id);
+    res.status(200).json(product);
+  } catch (err) {
+    console.error("상품 조회 실패:", err);
+    res.status(500).json({ error: "상품 조회 실패" });
+  }
 };
