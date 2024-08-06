@@ -6,11 +6,11 @@
 
 ## 패키지
 
-"@aws-sdk/client-s3": "^3.620.0",
-"body-parser": "^1.20.2",
-"cors": "^2.8.5",
-"dotenv": "^16.4.5",
-"express": "^4.19.2",
-"mongoose": "^8.4.1",
-"multer": "^1.4.5-lts.1",
-"multer-s3": "^3.0.1"
+- "@aws-sdk/client-s3": "^3.620.0"
+- "body-parser": "^1.20.2"
+- "cors": "^2.8.5"
+- "dotenv": "^16.4.5"
+- "express": "^4.19.2"
+- "mongoose": "^8.4.1"
+- "multer": "^1.4.5-lts.1"
+- "multer-s3": "^3.0.1"
