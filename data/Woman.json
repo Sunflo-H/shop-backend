@@ -1,0 +1,170 @@
+[
+  {
+    "category": { "$oid": "667833a004e6b2223ffa132b" },
+    "color": ["Black", "Red", "Green", "Blue", "Yellow"],
+    "description": "Like our best-selling Cecile, Eloise and more styles.",
+    "imageUrl": "http://res.cloudinary.com/dysdtbktd/image/upload/v1678878126/unsmid2bxzkze4gbwdu1.jpg",
+    "price": 278,
+    "createdAt": {
+      "$date": "2024-06-25T12:57:32.513Z"
+    },
+    "size": ["S", "M", "L", "XL"],
+    "status": "Sale",
+    "stock": 50,
+    "name": "Women's Clothing 4"
+  },
+  {
+    "category": { "$oid": "667833a004e6b2223ffa132b" },
+    "color": ["Black", "Red", "Green", "Blue", "Yellow"],
+    "description": "Like our best-selling Cecile, Eloise and more styles.",
+    "imageUrl": "http://res.cloudinary.com/dysdtbktd/image/upload/v1678877872/nbknz3gmxzqpzfmtvxni.jpg",
+    "price": 453,
+    "createdAt": {
+      "$date": "2024-06-25T12:57:32.513Z"
+    },
+    "size": ["S", "M", "L", "XL"],
+    "status": "Sale",
+    "stock": 50,
+    "name": "Women's Clothing 1"
+  },
+  {
+    "category": { "$oid": "667833a004e6b2223ffa132b" },
+    "color": ["Black", "Red", "Green", "Blue", "Yellow"],
+    "description": "Like our best-selling Cecile, Eloise and more styles.",
+    "imageUrl": "http://res.cloudinary.com/dysdtbktd/image/upload/v1678878572/skopb93pui9chxsbqssq.jpg",
+    "price": 399,
+    "createdAt": {
+      "$date": "2024-06-25T12:57:32.513Z"
+    },
+    "size": ["S", "M", "L", "XL"],
+    "status": "Sale",
+    "stock": 50,
+    "name": "Women's Clothing 7"
+  },
+  {
+    "category": { "$oid": "667833a004e6b2223ffa132b" },
+    "color": ["Black", "Red", "Green", "Blue", "Yellow"],
+    "description": "Like our best-selling Cecile, Eloise and more styles.",
+    "imageUrl": "http://res.cloudinary.com/dysdtbktd/image/upload/v1678878174/pyexby9uvqty34lfnvik.jpg",
+    "price": 153,
+    "createdAt": {
+      "$date": "2024-06-25T12:57:32.513Z"
+    },
+    "size": ["S", "M", "L", "XL"],
+    "status": "Sale",
+    "stock": 50,
+    "name": "Women's Clothing 5"
+  },
+  {
+    "category": { "$oid": "667833a004e6b2223ffa132b" },
+    "color": ["Black", "Red", "Green", "Blue", "Yellow"],
+    "description": "Like our best-selling Cecile, Eloise and more styles.",
+    "imageUrl": "http://res.cloudinary.com/dysdtbktd/image/upload/v1678878106/mex2zziiw05rzqc6e5xk.jpg",
+    "price": 61,
+    "createdAt": {
+      "$date": "2024-06-25T12:57:32.513Z"
+    },
+    "size": ["S", "M", "L", "XL"],
+    "status": "Sale",
+    "stock": 50,
+    "name": "Women's Clothing 3"
+  },
+  {
+    "category": { "$oid": "667833a004e6b2223ffa132b" },
+    "color": ["Black", "Red", "Green", "Blue", "Yellow"],
+    "description": "Like our best-selling Cecile, Eloise and more styles.",
+    "imageUrl": "http://res.cloudinary.com/dysdtbktd/image/upload/v1678878425/oswav02ouia5xlt9tlxq.jpg",
+    "price": 487,
+    "createdAt": {
+      "$date": "2024-06-25T12:57:32.513Z"
+    },
+    "size": ["S", "M", "L", "XL"],
+    "status": "Sale",
+    "stock": 50,
+    "name": "Women's Clothing 6"
+  },
+  {
+    "category": { "$oid": "667833a004e6b2223ffa132b" },
+    "color": ["Black", "Red", "Green", "Blue", "Yellow"],
+    "description": "Like our best-selling Cecile, Eloise and more styles.",
+    "imageUrl": "http://res.cloudinary.com/dysdtbktd/image/upload/v1678878669/ga3vyhdu88m0pujgrbtq.jpg",
+    "price": 58,
+    "createdAt": {
+      "$date": "2024-06-25T12:57:32.513Z"
+    },
+    "size": ["S", "M", "L", "XL"],
+    "status": "Sale",
+    "stock": 50,
+    "name": "Women's Clothing 8"
+  },
+  {
+    "category": { "$oid": "667833a004e6b2223ffa132b" },
+    "color": ["Black", "Red", "Green", "Blue", "Yellow"],
+    "description": "Like our best-selling Cecile, Eloise and more styles.",
+    "imageUrl": "http://res.cloudinary.com/dysdtbktd/image/upload/v1678878758/iwvkw01utghksl8offtn.jpg",
+    "price": 113,
+    "createdAt": {
+      "$date": "2024-06-25T12:57:32.513Z"
+    },
+    "size": ["S", "M", "L", "XL"],
+    "status": "Sale",
+    "stock": 50,
+    "name": "Women's Clothing 9"
+  },
+  {
+    "category": { "$oid": "667833a004e6b2223ffa132b" },
+    "color": ["Black", "Red", "Green", "Blue", "Yellow"],
+    "description": "Like our best-selling Cecile, Eloise and more styles.",
+    "imageUrl": "http://res.cloudinary.com/dysdtbktd/image/upload/v1678878865/g74zomwdrvtvw3vezwgq.jpg",
+    "price": 412,
+    "createdAt": {
+      "$date": "2024-06-25T12:57:32.513Z"
+    },
+    "size": ["S", "M", "L", "XL"],
+    "status": "Sale",
+    "stock": 50,
+    "name": "Women's Clothing 12"
+  },
+  {
+    "category": { "$oid": "667833a004e6b2223ffa132b" },
+    "color": ["Black", "Red", "Green", "Blue", "Yellow"],
+    "description": "Like our best-selling Cecile, Eloise and more styles.",
+    "imageUrl": "http://res.cloudinary.com/dysdtbktd/image/upload/v1678878921/jptscjdckixib7ddukze.jpg",
+    "price": 54,
+    "createdAt": {
+      "$date": "2024-06-25T12:57:32.513Z"
+    },
+    "size": ["S", "M", "L", "XL"],
+    "status": "Sale",
+    "stock": 50,
+    "name": "Women's Clothing 11"
+  },
+  {
+    "category": { "$oid": "667833a004e6b2223ffa132b" },
+    "color": ["Black", "Red", "Green", "Blue", "Yellow"],
+    "description": "Like our best-selling Cecile, Eloise and more styles.",
+    "imageUrl": "http://res.cloudinary.com/dysdtbktd/image/upload/v1678878067/ctlpyb10seolksltghfk.jpg",
+    "price": 22,
+    "createdAt": {
+      "$date": "2024-06-25T12:57:32.513Z"
+    },
+    "size": ["S", "M", "L", "XL"],
+    "status": "Sale",
+    "stock": 50,
+    "name": "Women's Clothing 2"
+  },
+  {
+    "category": { "$oid": "667833a004e6b2223ffa132b" },
+    "color": ["Black", "Red", "Green", "Blue", "Yellow"],
+    "description": "Like our best-selling Cecile, Eloise and more styles.",
+    "imageUrl": "http://res.cloudinary.com/dysdtbktd/image/upload/v1678878722/j8nozqph8lxqyidrhapb.jpg",
+    "price": 47,
+    "createdAt": {
+      "$date": "2024-06-25T12:57:32.513Z"
+    },
+    "size": ["S", "M", "L", "XL"],
+    "status": "Sale",
+    "stock": 50,
+    "name": "Women's Clothing 10"
+  }
+]

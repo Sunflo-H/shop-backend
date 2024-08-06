@@ -1,0 +1,10 @@
+[
+  {
+    "id": "60f7cbbf4f1c4e3f10d8f24a",
+    "password": "hashedpassword",
+    "name": "exampleUser",
+    "role": "user",
+    "favorite": [],
+    "cart": []
+  }
+]

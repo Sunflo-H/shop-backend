@@ -1,0 +1,170 @@
+[
+  {
+    "category": { "$oid": "66794e8a04e6b2223ffa1330" },
+    "color": ["Black", "Red", "Green", "Blue", "Yellow"],
+    "description": "Like our best-selling Cecile, Eloise and more styles.",
+    "imageUrl": "http://res.cloudinary.com/dysdtbktd/image/upload/v1678883856/ggxxhvpyt2ryxj3rduet.jpg",
+    "price": 352,
+    "size": ["260", "265", "270", "275"],
+    "status": "Sale",
+    "stock": 50,
+    "name": "Shoes 3",
+    "createdAt": {
+      "$date": "2024-06-25T12:57:32.513Z"
+    }
+  },
+  {
+    "category": { "$oid": "66794e8a04e6b2223ffa1330" },
+    "color": ["Black", "Red", "Green", "Blue", "Yellow"],
+    "description": "Like our best-selling Cecile, Eloise and more styles.",
+    "imageUrl": "http://res.cloudinary.com/dysdtbktd/image/upload/v1678883936/ii10ffd2zhiedvbdhvmo.jpg",
+    "price": 300,
+    "size": ["260", "265", "270", "275"],
+    "status": "Sale",
+    "stock": 50,
+    "name": "Shoes 8",
+    "createdAt": {
+      "$date": "2024-06-25T12:57:32.513Z"
+    }
+  },
+  {
+    "category": { "$oid": "66794e8a04e6b2223ffa1330" },
+    "color": ["Black", "Red", "Green", "Blue", "Yellow"],
+    "description": "Like our best-selling Cecile, Eloise and more styles.",
+    "imageUrl": "http://res.cloudinary.com/dysdtbktd/image/upload/v1678883973/pgax57ax1puzrebjhqw7.jpg",
+    "price": 400,
+    "size": ["260", "265", "270", "275"],
+    "status": "Sale",
+    "stock": 50,
+    "name": "Shoes 10",
+    "createdAt": {
+      "$date": "2024-06-25T12:57:32.513Z"
+    }
+  },
+  {
+    "category": { "$oid": "66794e8a04e6b2223ffa1330" },
+    "color": ["Black", "Red", "Green", "Blue", "Yellow"],
+    "description": "Like our best-selling Cecile, Eloise and more styles.",
+    "imageUrl": "http://res.cloudinary.com/dysdtbktd/image/upload/v1678883927/brqoolm6z4e7lvwqd7x3.jpg",
+    "price": 245,
+    "size": ["260", "265", "270", "275"],
+    "status": "Sale",
+    "stock": 50,
+    "name": "Shoes 7",
+    "createdAt": {
+      "$date": "2024-06-25T12:57:32.513Z"
+    }
+  },
+  {
+    "category": { "$oid": "66794e8a04e6b2223ffa1330" },
+    "color": ["Black", "Red", "Green", "Blue", "Yellow"],
+    "description": "Like our best-selling Cecile, Eloise and more styles.",
+    "imageUrl": "http://res.cloudinary.com/dysdtbktd/image/upload/v1678883990/wcfjtwfk5izpsgnzemjw.jpg",
+    "price": 245,
+    "size": ["260", "265", "270", "275"],
+    "status": "Sale",
+    "stock": 50,
+    "name": "Shoes 11",
+    "createdAt": {
+      "$date": "2024-06-25T12:57:32.513Z"
+    }
+  },
+  {
+    "category": { "$oid": "66794e8a04e6b2223ffa1330" },
+    "color": ["Black", "Red", "Green", "Blue", "Yellow"],
+    "description": "Like our best-selling Cecile, Eloise and more styles.",
+    "imageUrl": "http://res.cloudinary.com/dysdtbktd/image/upload/v1678883868/rj5az08jsbcxrhgzc0lc.jpg",
+    "price": 439,
+    "size": ["260", "265", "270", "275"],
+    "status": "Sale",
+    "stock": 50,
+    "name": "Shoes 2",
+    "createdAt": {
+      "$date": "2024-06-25T12:57:32.513Z"
+    }
+  },
+  {
+    "category": { "$oid": "66794e8a04e6b2223ffa1330" },
+    "color": ["Black", "Red", "Green", "Blue", "Yellow"],
+    "description": "Like our best-selling Cecile, Eloise and more styles.",
+    "imageUrl": "http://res.cloudinary.com/dysdtbktd/image/upload/v1678883916/ixg4slxpt45hr0ec4jdc.jpg",
+    "price": 120,
+    "size": ["260", "265", "270", "275"],
+    "status": "Sale",
+    "stock": 50,
+    "name": "Shoes 6",
+    "createdAt": {
+      "$date": "2024-06-25T12:57:32.513Z"
+    }
+  },
+  {
+    "category": { "$oid": "66794e8a04e6b2223ffa1330" },
+    "color": ["Black", "Red", "Green", "Blue", "Yellow"],
+    "description": "Like our best-selling Cecile, Eloise and more styles.",
+    "imageUrl": "http://res.cloudinary.com/dysdtbktd/image/upload/v1678883964/cwve78iar60o1s7khhek.jpg",
+    "price": 578,
+    "size": ["260", "265", "270", "275"],
+    "status": "Sale",
+    "stock": 50,
+    "name": "Shoes 9",
+    "createdAt": {
+      "$date": "2024-06-25T12:57:32.513Z"
+    }
+  },
+  {
+    "category": { "$oid": "66794e8a04e6b2223ffa1330" },
+    "color": ["Black", "Red", "Green", "Blue", "Yellow"],
+    "description": "Like our best-selling Cecile, Eloise and more styles.",
+    "imageUrl": "http://res.cloudinary.com/dysdtbktd/image/upload/v1678884005/vvves4cva27xb55emik8.jpg",
+    "price": 75,
+    "size": ["260", "265", "270", "275"],
+    "status": "Sale",
+    "stock": 50,
+    "name": "Shoes 12",
+    "createdAt": {
+      "$date": "2024-06-25T12:57:32.513Z"
+    }
+  },
+  {
+    "category": { "$oid": "66794e8a04e6b2223ffa1330" },
+    "color": ["Black", "Red", "Green", "Blue", "Yellow"],
+    "description": "Like our best-selling Cecile, Eloise and more styles.",
+    "imageUrl": "http://res.cloudinary.com/dysdtbktd/image/upload/v1678883906/il8nv5fvx3qpvj6jjqpc.jpg",
+    "price": 89,
+    "size": ["260", "265", "270", "275"],
+    "status": "Sale",
+    "stock": 50,
+    "name": "Shoes 5",
+    "createdAt": {
+      "$date": "2024-06-25T12:57:32.513Z"
+    }
+  },
+  {
+    "category": { "$oid": "66794e8a04e6b2223ffa1330" },
+    "color": ["Black", "Red", "Green", "Blue", "Yellow"],
+    "description": "Like our best-selling Cecile, Eloise and more styles.",
+    "imageUrl": "http://res.cloudinary.com/dysdtbktd/image/upload/v1678883887/znwcpgdrwe6shwkpu6gl.jpg",
+    "price": 205,
+    "size": ["260", "265", "270", "275"],
+    "status": "Sale",
+    "stock": 50,
+    "name": "Shoes 4",
+    "createdAt": {
+      "$date": "2024-06-25T12:57:32.513Z"
+    }
+  },
+  {
+    "category": { "$oid": "66794e8a04e6b2223ffa1330" },
+    "color": ["Black", "Red", "Green", "Blue", "Yellow"],
+    "description": "Like our best-selling Cecile, Eloise and more styles.",
+    "imageUrl": "http://res.cloudinary.com/dysdtbktd/image/upload/v1678883829/zg9a1xizdnp5oopsvrn2.jpg",
+    "price": 150,
+    "size": ["260", "265", "270", "275"],
+    "status": "Sale",
+    "stock": 50,
+    "name": "Shoes 1",
+    "createdAt": {
+      "$date": "2024-06-25T12:57:32.513Z"
+    }
+  }
+]

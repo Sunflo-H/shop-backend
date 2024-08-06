@@ -1,0 +1,183 @@
+//악세사리 "man": { "$oid": "6678337204e6b2223ffa132a" },
+//악세사리 "woman": { "$oid": "667833a004e6b2223ffa132b" },
+//악세사리 "shoes": { "$oid": "66794e8a04e6b2223ffa1330" },
+//악세사리 "accessory": { "$oid": "66794e7504e6b2223ffa132f" },
+[
+  {
+    "category": { "$oid": "66794e7504e6b2223ffa132f" },
+    "color": ["Black", "Red", "Green", "Blue", "Yellow"],
+    "description": "Look sharp in 30 seconds. Classic styles for your most formal occasions.",
+    "imageUrl": "http://res.cloudinary.com/dysdtbktd/image/upload/v1678883176/ivsp3taa8elcna7hjgx7.jpg",
+    "price": 353,
+    "createdAt": {
+      "$date": "2024-06-25T12:57:32.513Z"
+    },
+    "size": ["S", "M", "L", "XL"],
+    "status": "Sale",
+    "stock": 50,
+    "name": "Accessories 11"
+  },
+  {
+    "category": { "$oid": "66794e7504e6b2223ffa132f" },
+    "color": ["Black", "Red", "Green", "Blue", "Yellow"],
+    "description": "Look sharp in 30 seconds. Classic styles for your most formal occasions.",
+    "imageUrl": "http://res.cloudinary.com/dysdtbktd/image/upload/v1678883116/fy2zsyawffrmo3f5w9ck.jpg",
+    "price": 499,
+    "createdAt": {
+      "$date": "2024-06-25T12:57:32.513Z"
+    },
+    "size": ["S", "M", "L", "XL"],
+    "status": "Sale",
+    "stock": 50,
+    "name": "Accessories 8"
+  },
+  {
+    "category": { "$oid": "66794e7504e6b2223ffa132f" },
+    "color": ["Black", "Red", "Green", "Blue", "Yellow"],
+    "description": "Look sharp in 30 seconds. Classic styles for your most formal occasions.",
+    "imageUrl": "http://res.cloudinary.com/dysdtbktd/image/upload/v1678883072/xsqgwek4kxvr5wqkxrnq.jpg",
+    "price": 300,
+    "createdAt": {
+      "$date": "2024-06-25T12:57:32.513Z"
+    },
+    "size": ["S", "M", "L", "XL"],
+    "status": "Sale",
+    "stock": 50,
+    "name": "Accessories 5"
+  },
+  {
+    "category": { "$oid": "66794e7504e6b2223ffa132f" },
+    "color": ["Black", "Red", "Green", "Blue", "Yellow"],
+    "description": "Look sharp in 30 seconds. Classic styles for your most formal occasions.",
+    "id": "6f69ee87-46ee-4ebd-af50-986a33d26d06",
+    "imageUrl": "http://res.cloudinary.com/dysdtbktd/image/upload/v1678883010/o9wjuaweteahpgmn80ep.jpg",
+    "price": 800,
+    "createdAt": {
+      "$date": "2024-06-25T12:57:32.513Z"
+    },
+    "size": ["S", "M", "L", "XL"],
+    "status": "Sale",
+    "stock": 50,
+    "name": "Accessories 1"
+  },
+  {
+    "category": { "$oid": "66794e7504e6b2223ffa132f" },
+    "color": ["Black", "Red", "Green", "Blue", "Yellow"],
+    "description": "Look sharp in 30 seconds. Classic styles for your most formal occasions.",
+    "id": "7d7e24e0-e23b-4dd6-8f9d-55faf1b5b196",
+    "imageUrl": "http://res.cloudinary.com/dysdtbktd/image/upload/v1678883100/dvecm3gp02e4z6pmn0tw.jpg",
+    "price": 839,
+    "createdAt": {
+      "$date": "2024-06-25T12:57:32.513Z"
+    },
+    "size": ["S", "M", "L", "XL"],
+    "status": "Sale",
+    "stock": 50,
+    "name": "Accessories 7"
+  },
+  {
+    "category": { "$oid": "66794e7504e6b2223ffa132f" },
+    "color": ["Black", "Red", "Green", "Blue", "Yellow"],
+    "description": "Look sharp in 30 seconds. Classic styles for your most formal occasions.",
+    "id": "8194bac3-dde9-4750-9e0a-9a188f814ef8",
+    "imageUrl": "http://res.cloudinary.com/dysdtbktd/image/upload/v1678883189/je6rpgqtmsktxnlyizqr.jpg",
+    "price": 25,
+    "createdAt": {
+      "$date": "2024-06-25T12:57:32.513Z"
+    },
+    "size": ["S", "M", "L", "XL"],
+    "status": "Sale",
+    "stock": 50,
+    "name": "Accessories 12"
+  },
+  {
+    "category": { "$oid": "66794e7504e6b2223ffa132f" },
+    "color": ["Black", "Red", "Green", "Blue", "Yellow"],
+    "description": "Look sharp in 30 seconds. Classic styles for your most formal occasions.",
+    "id": "938687d1-a78f-475d-88d3-c30e0a9860f4",
+    "imageUrl": "http://res.cloudinary.com/dysdtbktd/image/upload/v1678883060/yvgd51zmou862fvmtjdz.jpg",
+    "price": 740,
+    "createdAt": {
+      "$date": "2024-06-25T12:57:32.513Z"
+    },
+    "size": ["S", "M", "L", "XL"],
+    "status": "Sale",
+    "stock": 50,
+    "name": "Accessories 4"
+  },
+  {
+    "category": { "$oid": "66794e7504e6b2223ffa132f" },
+    "color": ["Black", "Red", "Green", "Blue", "Yellow"],
+    "description": "Look sharp in 30 seconds. Classic styles for your most formal occasions.",
+    "id": "97813159-ae06-4a37-a71f-1f1e7330d72d",
+    "imageUrl": "http://res.cloudinary.com/dysdtbktd/image/upload/v1678883046/thrjkaytroevaor2lbou.jpg",
+    "price": 989,
+    "createdAt": {
+      "$date": "2024-06-25T12:57:32.513Z"
+    },
+    "size": ["S", "M", "L", "XL"],
+    "status": "Sale",
+    "stock": 50,
+    "name": "Accessories 3"
+  },
+  {
+    "category": { "$oid": "66794e7504e6b2223ffa132f" },
+    "color": ["Black", "Red", "Green", "Blue", "Yellow"],
+    "description": "Look sharp in 30 seconds. Classic styles for your most formal occasions.",
+    "id": "d79c79a4-f105-4790-851c-a84c817de65d",
+    "imageUrl": "http://res.cloudinary.com/dysdtbktd/image/upload/v1678883139/fmxuvg2gtluace2wwpnv.jpg",
+    "price": 347,
+    "createdAt": {
+      "$date": "2024-06-25T12:57:32.513Z"
+    },
+    "size": ["S", "M", "L", "XL"],
+    "status": "Sale",
+    "stock": 50,
+    "name": "Accessories 9"
+  },
+  {
+    "category": { "$oid": "66794e7504e6b2223ffa132f" },
+    "color": ["Black", "Red", "Green", "Blue", "Yellow"],
+    "description": "Look sharp in 30 seconds. Classic styles for your most formal occasions.",
+    "id": "eb58ec1a-91c5-4bbf-9b9b-ca1296e88722",
+    "imageUrl": "http://res.cloudinary.com/dysdtbktd/image/upload/v1678883167/qmkks5kndlnkdv2hkqcl.jpg",
+    "price": 775,
+    "createdAt": {
+      "$date": "2024-06-25T12:57:32.513Z"
+    },
+    "size": ["S", "M", "L", "XL"],
+    "status": "Sale",
+    "stock": 50,
+    "name": "Accessories 10"
+  },
+  {
+    "category": { "$oid": "66794e7504e6b2223ffa132f" },
+    "color": ["Black", "Red", "Green", "Blue", "Yellow"],
+    "description": "Look sharp in 30 seconds. Classic styles for your most formal occasions.",
+    "id": "f4daea3a-6604-46b8-a86a-289511464f19",
+    "imageUrl": "http://res.cloudinary.com/dysdtbktd/image/upload/v1678883087/zzm3blrhej2x6hokstje.jpg",
+    "price": 648,
+    "createdAt": {
+      "$date": "2024-06-25T12:57:32.513Z"
+    },
+    "size": ["S", "M", "L", "XL"],
+    "status": "Sale",
+    "stock": 50,
+    "name": "Accessories 6"
+  },
+  {
+    "category": { "$oid": "66794e7504e6b2223ffa132f" },
+    "color": ["Black", "Red", "Green", "Blue", "Yellow"],
+    "description": "Look sharp in 30 seconds. Classic styles for your most formal occasions.",
+    "id": "f5828cc1-95df-4dca-83e6-0407b3164af9",
+    "imageUrl": "http://res.cloudinary.com/dysdtbktd/image/upload/v1678883033/a1gldfdharb0kzaswbxb.jpg",
+    "price": 623,
+    "createdAt": {
+      "$date": "2024-06-25T12:57:32.513Z"
+    },
+    "size": ["S", "M", "L", "XL"],
+    "status": "Sale",
+    "stock": 50,
+    "name": "Accessories 2"
+  }
+]

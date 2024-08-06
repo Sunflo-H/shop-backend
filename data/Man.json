@@ -1,0 +1,164 @@
+[
+  {
+    "category": { "$oid": "6678337204e6b2223ffa132a" },
+    "color": ["Black", "Red", "Green", "Blue", "Yellow"],
+    "description": "Look sharp in 30 seconds. Classic styles for your most formal occasions.",
+    "imageUrl": "http://res.cloudinary.com/dysdtbktd/image/upload/v1678860324/irt4qzqmatomks9gtlvu.jpg",
+    "price": 64,
+    "createdAt": {
+      "$date": "2024-06-25T12:57:32.513Z"
+    },
+    "size": ["S", "M", "L", "XL"],
+    "status": "Sale",
+    "stock": 50,
+    "name": "Men's Clothing 4"
+  },
+  {
+    "category": { "$oid": "6678337204e6b2223ffa132a" },
+    "color": ["Black", "Red", "Green", "Blue", "Yellow"],
+    "description": "Look sharp in 30 seconds. Classic styles for your most formal occasions.",
+    "imageUrl": "http://res.cloudinary.com/dysdtbktd/image/upload/v1678860419/g95ck9jp8tniukfz0spn.jpg",
+    "price": 200,
+    "createdAt": {
+      "$date": "2024-06-25T12:57:32.513Z"
+    },
+    "size": ["S", "M", "L", "XL"],
+    "status": "Sale",
+    "stock": 50,
+    "name": "Men's Clothing 10"
+  },
+  {
+    "category": { "$oid": "6678337204e6b2223ffa132a" },
+    "color": ["Black", "Red", "Green", "Blue", "Yellow"],
+    "description": "Look sharp in 30 seconds. Classic styles for your most formal occasions.",
+    "imageUrl": "http://res.cloudinary.com/dysdtbktd/image/upload/v1678860296/lypkwzfikdazohgwi2lw.jpg",
+    "price": 100,
+    "createdAt": {
+      "$date": "2024-06-25T12:57:32.513Z"
+    },
+    "size": ["S", "M", "L", "XL"],
+    "status": "Sale",
+    "stock": 50,
+    "name": "Men's Clothing 3"
+  },
+  {
+    "category": { "$oid": "6678337204e6b2223ffa132a" },
+    "color": ["Black", "Red", "Green", "Blue", "Yellow"],
+    "description": "Look sharp in 30 seconds. Classic styles for your most formal occasions.",
+    "imageUrl": "http://res.cloudinary.com/dysdtbktd/image/upload/v1678860401/c6q5zg3qvzdfms6oktth.jpg",
+    "price": 350,
+    "createdAt": {
+      "$date": "2024-06-25T12:57:32.513Z"
+    },
+    "size": ["S", "M", "L", "XL"],
+    "status": "Sale",
+    "stock": 50,
+    "name": "Men's Clothing 9"
+  },
+  {
+    "category": { "$oid": "6678337204e6b2223ffa132a" },
+    "color": ["Black", "Red", "Green", "Blue", "Yellow"],
+    "description": "Look sharp in 30 seconds. Classic styles for your most formal occasions.",
+    "imageUrl": "http://res.cloudinary.com/dysdtbktd/image/upload/v1678860350/jfnucwf3eibstybfbbgn.jpg",
+    "price": 200,
+    "registrationDate": "2024-01-31",
+    "size": ["S", "M", "L", "XL"],
+    "status": "Sale",
+    "stock": 50,
+    "name": "Men's Clothing 6"
+  },
+  {
+    "category": { "$oid": "6678337204e6b2223ffa132a" },
+    "color": ["Black", "Red", "Green", "Blue", "Yellow"],
+    "description": "Look sharp in 30 seconds. Classic styles for your most formal occasions.",
+    "imageUrl": "http://res.cloudinary.com/dysdtbktd/image/upload/v1678860338/j5uvu5wb53wod7bgqevx.jpg",
+    "price": 80,
+    "registrationDate": "2024-01-31",
+    "size": ["S", "M", "L", "XL"],
+    "status": "Sale",
+    "stock": 50,
+    "name": "Men's Clothing 5"
+  },
+  {
+    "category": { "$oid": "6678337204e6b2223ffa132a" },
+    "color": ["Black", "Red", "Green", "Blue", "Yellow"],
+    "description": "Look sharp in 30 seconds. Classic styles for your most formal occasions.",
+    "imageUrl": "http://res.cloudinary.com/dysdtbktd/image/upload/v1678860172/eishbdkm08gnttwofhba.jpg",
+    "price": 431,
+    "registrationDate": "2024-01-31",
+    "size": ["S", "M", "L", "XL"],
+    "status": "Sale",
+    "stock": 50,
+    "name": "Men's Clothing 1"
+  },
+  {
+    "category": { "$oid": "6678337204e6b2223ffa132a" },
+    "color": ["Black", "Red", "Green", "Blue", "Yellow"],
+    "description": "Look sharp in 30 seconds. Classic styles for your most formal occasions.",
+    "imageUrl": "http://res.cloudinary.com/dysdtbktd/image/upload/v1678860364/v2s2dqen5zyarkrse8ja.jpg",
+    "price": 350,
+    "createdAt": {
+      "$date": "2024-06-25T12:57:32.513Z"
+    },
+    "size": ["S", "M", "L", "XL"],
+    "status": "Sale",
+    "stock": 50,
+    "name": "Men's Clothing 7"
+  },
+  {
+    "category": { "$oid": "6678337204e6b2223ffa132a" },
+    "color": ["Black", "Red", "Green", "Blue", "Yellow"],
+    "description": "Look sharp in 30 seconds. Classic styles for your most formal occasions.",
+    "imageUrl": "http://res.cloudinary.com/dysdtbktd/image/upload/v1678860434/gzq4qjcx3jljp5wnjkba.jpg",
+    "price": 586,
+    "createdAt": {
+      "$date": "2024-06-25T12:57:32.513Z"
+    },
+    "size": ["S", "M", "L", "XL"],
+    "status": "Sale",
+    "stock": 50,
+    "name": "Men's Clothing 11"
+  },
+  {
+    "category": { "$oid": "6678337204e6b2223ffa132a" },
+    "color": ["Black", "Red", "Green", "Blue", "Yellow"],
+    "description": "Look sharp in 30 seconds. Classic styles for your most formal occasions.",
+    "imageUrl": "http://res.cloudinary.com/dysdtbktd/image/upload/v1678860382/pjjshzzbtjapk0ah9mw3.jpg",
+    "price": 89,
+    "createdAt": {
+      "$date": "2024-06-25T12:57:32.513Z"
+    },
+    "size": ["S", "M", "L", "XL"],
+    "status": "Sale",
+    "stock": 50,
+    "name": "Men's Clothing 8"
+  },
+  {
+    "category": { "$oid": "6678337204e6b2223ffa132a" },
+    "color": ["Black", "Red", "Green", "Blue", "Yellow"],
+    "description": "Look sharp in 30 seconds. Classic styles for your most formal occasions.",
+    "imageUrl": "http://res.cloudinary.com/dysdtbktd/image/upload/v1678860451/xv0mnmccguowex4ty6cx.jpg",
+    "price": 59,
+    "createdAt": {
+      "$date": "2024-06-25T12:57:32.513Z"
+    },
+    "size": ["S", "M", "L", "XL"],
+    "status": "Sale",
+    "stock": 50,
+    "name": "Men's Clothing 12"
+  },
+  {
+    "category": { "$oid": "6678337204e6b2223ffa132a" },
+    "color": ["Black", "Red", "Green", "Blue", "Yellow"],
+    "description": "Look sharp in 30 seconds. Classic styles for your most formal occasions.",
+    "imageUrl": "http://res.cloudinary.com/dysdtbktd/image/upload/v1678860271/smzbuadebrj7dm56gozt.jpg",
+    "price": 35,
+    "createdAt": {
+      "$date": "2024-06-25T12:57:32.513Z"
+    },
+    "size": ["S", "M", "L", "XL"],
+    "status": "Sale",
+    "stock": 50,
+    "name": "Men's Clothing 2"
+  }
+]
