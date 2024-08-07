@@ -9,34 +9,34 @@ const productSchema = new Schema({
     required: true,
     trim: true,
   },
-  // description: {
-  //   type: String,
-  //   required: true,
-  //   trim: true,
-  // },
-  // price: {
-  //   type: Number,
-  //   required: true,
-  //   min: 0,
-  // },
-  // image: {
-  //   type: String,
-  //   required: true,
-  // },
-  // createdAt: {
-  //   type: Date,
-  //   default: Date.now,
-  // },
-  // category: {
-  //   type: String,
-  //   required: true,
-  // },
-  // color: [{ type: String, trim: true }],
-  // size: [{ type: String, trim: true }],
-  // status: {
-  //   type: String,
-  //   required: true,
-  // },
+  description: {
+    type: String,
+    required: true,
+    trim: true,
+  },
+  price: {
+    type: Number,
+    required: true,
+    min: 0,
+  },
+  image: {
+    type: String,
+    required: true,
+  },
+  createdAt: {
+    type: Date,
+    default: Date.now,
+  },
+  category: {
+    type: String,
+    required: true,
+  },
+  color: [{ type: String, trim: true }],
+  size: [{ type: String, trim: true }],
+  status: {
+    type: String,
+    required: true,
+  },
 });
 
 // 모델 이름은 Product, 컬렉션이름은 Products 임을 명시적으로 설정

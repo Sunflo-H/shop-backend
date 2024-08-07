@@ -13,7 +13,7 @@ const app = express();
 const port = process.env.PORT || 80;
 
 // 미들웨어 선언
-// app.use(cors());
+app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
