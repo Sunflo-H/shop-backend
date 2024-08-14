@@ -1,9 +1,38 @@
 const Product = require("../models/product");
 
+exports.getProducts = async (req, res) => {
+  const { category, status, page, limit } = req.query;
+  console.log(category, status, page, limit);
+  const query = {};
+  if (category) query.category = category;
+  if (status) query.status = status;
+
+  try {
+    const products = await Product.find(query)
+      .skip((page - 1) * limit) // 페이지 번호에 따라 건너뛸 문서 수
+      .limit(limit);
+    res.status(200).json(products);
+  } catch (error) {
+    console.log("상품 읽기 실패 : ", error);
+    res.status(500).json({ message: error.message });
+  }
+};
+
+exports.getProductById = async (req, res) => {
+  try {
+    const product = await Product.findById(req.params.id);
+    res.status(200).json(product);
+  } catch (err) {
+    console.error("상품 조회 실패:", err);
+    res.status(500).json({ error: "상품 조회 실패" });
+  }
+};
+
 exports.createProduct = async (req, res) => {
   try {
     const { name, price, category, size, color, description, image, status } =
       req.body;
+    console.log(req.body);
     // 새 상품 객체 생성
     const newProduct = new Product({
       name,
@@ -23,25 +52,5 @@ exports.createProduct = async (req, res) => {
   } catch (error) {
     console.log("상품 생성 실패 : ", error);
     res.status(500).json({ message: error.message });
-  }
-};
-
-exports.getAllProducts = async (req, res) => {
-  try {
-    const products = await Product.find();
-    res.status(200).json(products);
-  } catch (error) {
-    console.log("상품 읽기 실패 : ", error);
-    res.status(500).json({ message: error.message });
-  }
-};
-
-exports.getProductById = async (req, res) => {
-  try {
-    const product = await Product.findById(req.params.id);
-    res.status(200).json(product);
-  } catch (err) {
-    console.error("상품 조회 실패:", err);
-    res.status(500).json({ error: "상품 조회 실패" });
   }
 };

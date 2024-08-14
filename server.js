@@ -3,7 +3,6 @@ const mongoose = require("mongoose");
 const cors = require("cors");
 const bodyParser = require("body-parser");
 const productRouter = require("./routes/product");
-const categoryRouter = require("./routes/category");
 const { S3Client } = require("@aws-sdk/client-s3");
 const multer = require("multer");
 const multerS3 = require("multer-s3");
@@ -39,8 +38,6 @@ app.get("/", (req, res) => {
 
 // Routes
 app.use("/api/product", productRouter);
-
-// app.use("/api/category", categoryRouter);
 
 // Start server
 app.listen(port, () => {
