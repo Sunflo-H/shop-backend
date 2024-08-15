@@ -1,45 +1,89 @@
 const User = require("../models/user");
+const bcrypt = require("bcryptjs");
+const jwt = require("jsonwebtoken");
 
-// 회원가입
-app.post("/register", async (req, res) => {
-  const { username, password } = req.body;
-
+exports.register = async (req, res) => {
   try {
-    const existingUser = await User.findOne({ username });
-    if (existingUser) {
-      return res.status(400).json({ message: "User already exists" });
+    const { id, password, username } = req.body;
+    console.log(id, password, username);
+    // 이미 존재하는 사용자인지 확인
+    let user = await User.findOne({ id });
+    if (user) {
+      return res.status(400).json({ msg: "이미 존재하는 사용자입니다." });
     }
 
-    const newUser = new User({ username, password });
-    await newUser.save();
-
-    res.status(201).json({ message: "User created" });
-  } catch (err) {
-    res.status(500).json({ error: "Something went wrong" });
-  }
-});
-
-// 로그인
-app.post("/login", async (req, res) => {
-  const { username, password } = req.body;
-
-  try {
-    const user = await User.findOne({ username });
-    if (!user) {
-      return res.status(400).json({ message: "Invalid credentials" });
-    }
-
-    const isMatch = await bcrypt.compare(password, user.password);
-    if (!isMatch) {
-      return res.status(400).json({ message: "Invalid credentials" });
-    }
-
-    const token = jwt.sign({ userId: user._id }, "your_jwt_secret", {
-      expiresIn: "1h",
+    // 새 사용자 생성
+    user = new User({
+      id,
+      password,
+      username,
     });
 
-    res.json({ token });
+    // 비밀번호 해싱
+    const salt = await bcrypt.genSalt(10);
+    user.password = await bcrypt.hash(password, salt);
+    console.log(1);
+    await user.save();
+    console.log(2);
+
+    // JWT 토큰 생성
+    const payload = {
+      user: {
+        jwt: user.jwt,
+      },
+    };
+    console.log(3);
+
+    jwt.sign(
+      payload,
+      "yourSecretKey", // 실제 프로젝트에서는 환경 변수로 관리해야 합니다
+      { expiresIn: 3600 },
+      (err, token) => {
+        if (err) throw err;
+        res.json({ token });
+      }
+    );
   } catch (err) {
-    res.status(500).json({ error: "Something went wrong" });
+    console.error(err.message);
+    res.status(500).send("서버 오류");
   }
-});
+};
+
+// 로그인
+exports.login = async (req, res) => {
+  try {
+    const { id, password, username } = req.body;
+
+    // 사용자 확인
+    let user = await User.findOne({ id });
+    if (!user) {
+      return res.status(400).json({ msg: "유효하지 않은 자격 증명" });
+    }
+
+    // 비밀번호 확인
+    const isMatch = await bcrypt.compare(password, user.password);
+    if (!isMatch) {
+      return res.status(400).json({ msg: "유효하지 않은 자격 증명" });
+    }
+
+    // JWT 토큰 생성
+    const payload = {
+      user: {
+        jwt: user.jwt,
+      },
+    };
+
+    jwt.sign(
+      payload,
+      "yourSecretKey", // 실제 프로젝트에서는 환경 변수로 관리해야 합니다
+      { expiresIn: 3600 },
+      (err, token) => {
+        if (err) throw err;
+        res.json({ token });
+      }
+    );
+  } catch (err) {
+    console.error(err.message);
+    res.status(500).send("서버 오류");
+  }
+};

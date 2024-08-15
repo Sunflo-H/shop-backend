@@ -3,9 +3,6 @@ const mongoose = require("mongoose");
 const cors = require("cors");
 const bodyParser = require("body-parser");
 const productRouter = require("./routes/product");
-const { S3Client } = require("@aws-sdk/client-s3");
-const multer = require("multer");
-const multerS3 = require("multer-s3");
 require("dotenv").config();
 
 const app = express();
