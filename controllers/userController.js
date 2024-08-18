@@ -54,7 +54,7 @@ exports.login = async (req, res) => {
 
     // 사용자 확인
     let user = await User.findOne({ username });
-    console.log(user);
+
     if (!user) {
       return res.status(400).json({ msg: "Username does not exist" });
     }
@@ -64,7 +64,8 @@ exports.login = async (req, res) => {
     if (!isMatch) {
       return res.status(400).json({ msg: "Password is incorrect" });
     }
-
+    console.log(user);
+    console.log(user.username);
     // JWT 토큰 생성
     jwt.sign(
       { username: user.username },

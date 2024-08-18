@@ -15,16 +15,13 @@ app.use(cors());
 
 const auth = (req, res, next) => {
   const token = req.header("Authorization").replace("Bearer ", ""); // 헤더에서 토큰을 꺼내기
-  console.log(token);
   if (!token) {
-    console.log(5);
     return res.status(401).json({ message: "No token, authorization denied" }); // 토큰이 없을 때
   }
-  console.log(4);
 
   try {
     const decoded = jwt.verify(token, "your_jwt_secret"); // 토큰 검증
-    req.user = decoded.userId; // 토큰에서 유저 ID를 꺼내기
+    req.username = decoded.username; // 토큰에서 유저 ID를 꺼내기
 
     next(); // 다음 미들웨어로 이동
     console.log(3);
@@ -40,8 +37,10 @@ app.get("/", (req, res) => {
 
 app.use("/api/user", userRouter);
 app.get("/api/protected-route", auth, (req, res) => {
-  console.log(req.user);
-  res.json({ message: `This is a protected route for username: ${req.user}` });
+  console.log(req.username, 1);
+  res.json({
+    message: `This is a protected route for username: ${req.username}`,
+  });
 });
 
 const PORT = 5000;
