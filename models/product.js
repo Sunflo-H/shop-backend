@@ -11,7 +11,6 @@ const productSchema = new Schema({
   },
   description: {
     type: String,
-    required: true,
     trim: true,
   },
   price: {
@@ -24,8 +23,9 @@ const productSchema = new Schema({
     required: true,
   },
   createdAt: {
-    type: Date,
-    default: Date.now,
+    // type: Date,
+    // default: Date.now,
+    type: String,
   },
   category: {
     type: String,
