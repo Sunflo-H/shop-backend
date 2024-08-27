@@ -19,6 +19,7 @@ exports.getProducts = async (req, res) => {
 };
 
 exports.getProductById = async (req, res) => {
+  console.log("아이디로 상품 가져오기");
   try {
     const product = await Product.findById(req.params.id);
     res.status(200).json(product);
@@ -32,7 +33,8 @@ exports.createProduct = async (req, res) => {
   try {
     const { name, price, category, size, color, description, image, status } =
       req.body;
-    console.log(req.body);
+    const date = transformDate(new Date());
+    console.log(date);
     // 새 상품 객체 생성
     const newProduct = new Product({
       name,
@@ -43,14 +45,33 @@ exports.createProduct = async (req, res) => {
       description,
       image: image,
       status,
-      createdAt: new Date(),
+      createdAt: date,
     });
     // 상품 저장
     const savedProduct = await newProduct.save();
     // 성공적으로 저장된 상품을 클라이언트에게 응답
     res.status(201).json(savedProduct);
   } catch (error) {
-    console.log("상품 생성 실패 : ", error);
+    console.log("상품 업데이트 실패 : ", error);
     res.status(500).json({ message: error.message });
   }
 };
+
+exports.updateProduct = async (req, res) => {
+  try {
+    const updatedProduct = Product.updateOne(
+      { _id: req.params.id },
+      { $set: req.body }
+    ).exec();
+    res.status(200).json(updatedProduct);
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+};
+
+function transformDate(newDate) {
+  const isoString = newDate.toISOString();
+  const [date, time] = isoString.split("T");
+  const dateAndTime = `${date} ${time.substring(0, 8)}`;
+  return dateAndTime;
+}
