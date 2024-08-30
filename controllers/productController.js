@@ -34,7 +34,6 @@ exports.createProduct = async (req, res) => {
     const { name, price, category, size, color, description, image, status } =
       req.body;
     const date = transformDate(new Date());
-    console.log(date);
     // 새 상품 객체 생성
     const newProduct = new Product({
       name,
@@ -58,14 +57,33 @@ exports.createProduct = async (req, res) => {
 };
 
 exports.updateProduct = async (req, res) => {
+  const id = req.params.id;
+  const updateData = req.body;
   try {
-    const updatedProduct = Product.updateOne(
-      { _id: req.params.id },
-      { $set: req.body }
+    const updatedProduct = await Product.updateOne(
+      { _id: id },
+      { $set: updateData }
     ).exec();
     res.status(200).json(updatedProduct);
   } catch (error) {
     res.status(500).json({ message: error.message });
+  }
+};
+
+exports.deleteProduct = async (req, res) => {
+  const { idList } = req.body;
+  try {
+    const result = await Product.deleteMany({
+      _id: { $in: idList },
+    });
+
+    res
+      .status(200)
+      .json({ message: `${result.deletedCount} products deleted.` });
+  } catch (error) {
+    res
+      .status(500)
+      .json({ message: "Failed to delete products.", error: error.message });
   }
 };
 

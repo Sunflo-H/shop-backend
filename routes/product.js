@@ -5,6 +5,7 @@ const {
   getProductById,
   createProduct,
   updateProduct,
+  deleteProduct,
 } = require("../controllers/productController");
 
 // express.Router()에 이 데이터를 저장하는 행위구만, 최종적으로 Router를 export해서 server.js에서 사용하는거지
@@ -19,5 +20,8 @@ router.post("/create", createProduct);
 
 // 특정 상품 업데이트
 router.post("/update/:id", updateProduct);
+
+// 상품 삭제
+router.delete("/delete", deleteProduct);
 
 module.exports = router;
