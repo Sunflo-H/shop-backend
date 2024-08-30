@@ -70,7 +70,7 @@ exports.updateProduct = async (req, res) => {
   }
 };
 
-exports.deleteProduct = async (req, res) => {
+exports.deleteProductMany = async (req, res) => {
   const { idList } = req.body;
   try {
     const result = await Product.deleteMany({
@@ -84,6 +84,29 @@ exports.deleteProduct = async (req, res) => {
     res
       .status(500)
       .json({ message: "Failed to delete products.", error: error.message });
+  }
+};
+
+exports.deleteProduct = async (req, res) => {
+  const id = req.params.id;
+  console.log(id);
+  try {
+    const deletedProduct = await Product.findByIdAndDelete({
+      _id: id,
+    });
+
+    if (!deletedProduct) {
+      return res.status(404).json({ message: "Product not found." });
+    }
+
+    res.status(200).json({
+      message: "Product deleted successfully.",
+      product: deletedProduct,
+    });
+  } catch (error) {
+    res
+      .status(500)
+      .json({ message: "Failed to delete product.", error: error.message });
   }
 };
 
