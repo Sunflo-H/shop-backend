@@ -1,11 +1,12 @@
 const Product = require("../models/product");
 
 exports.getProducts = async (req, res) => {
-  const { category, status, page, limit } = req.query;
-  console.log(category, status, page, limit);
+  const { category, status, page, limit, searchQuery } = req.query;
+
   const query = {};
   if (category) query.category = category;
   if (status) query.status = status;
+  if (searchQuery) query.name = { $regex: searchQuery };
 
   try {
     const products = await Product.find(query)
@@ -19,7 +20,6 @@ exports.getProducts = async (req, res) => {
 };
 
 exports.getProductById = async (req, res) => {
-  console.log("아이디로 상품 가져오기");
   try {
     const product = await Product.findById(req.params.id);
     res.status(200).json(product);
@@ -60,18 +60,20 @@ exports.updateProduct = async (req, res) => {
   const id = req.params.id;
   const updateData = req.body;
   try {
-    const updatedProduct = await Product.updateOne(
+    const updatedProduct = await Product.findOneAndUpdate(
       { _id: id },
-      { $set: updateData }
-    ).exec();
+      { $set: updateData },
+      { new: true }
+    );
+
     res.status(200).json(updatedProduct);
   } catch (error) {
     res.status(500).json({ message: error.message });
   }
 };
 
-exports.deleteProductMany = async (req, res) => {
-  const { idList } = req.body;
+exports.deleteProducts = async (req, res) => {
+  const idList = req.body;
   try {
     const result = await Product.deleteMany({
       _id: { $in: idList },
@@ -87,28 +89,12 @@ exports.deleteProductMany = async (req, res) => {
   }
 };
 
-exports.deleteProduct = async (req, res) => {
-  const id = req.params.id;
-  console.log(id);
-  try {
-    const deletedProduct = await Product.findByIdAndDelete({
-      _id: id,
-    });
-
-    if (!deletedProduct) {
-      return res.status(404).json({ message: "Product not found." });
-    }
-
-    res.status(200).json({
-      message: "Product deleted successfully.",
-      product: deletedProduct,
-    });
-  } catch (error) {
-    res
-      .status(500)
-      .json({ message: "Failed to delete product.", error: error.message });
-  }
-};
+// exports.searchProducts = async (req, res) => {
+//   const {name} = req.query;
+//   try {
+//     const result = await Product.find()
+//   }
+// }
 
 function transformDate(newDate) {
   const isoString = newDate.toISOString();
