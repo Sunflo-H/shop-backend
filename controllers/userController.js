@@ -5,18 +5,20 @@ const jwt = require("jsonwebtoken");
 exports.register = async (req, res) => {
   console.log("회원가입");
   try {
-    const { username, password } = req.body;
-    console.log(username, password);
+    const { email, name, password, phone } = req.body;
+    console.log(email, name, password, phone);
     // 이미 존재하는 사용자인지 확인
-    let user = await User.findOne({ username });
+    let user = await User.findOne({ email });
     console.log(user);
     if (user) {
-      return res.status(400).json({ msg: "Username already exists" });
+      return res.status(400).json({ msg: "Email already exists" });
     }
     // 새 사용자 생성
     user = new User({
-      username,
+      email,
+      name,
       password,
+      phone,
     });
 
     // 비밀번호 해싱
@@ -82,5 +84,23 @@ exports.login = async (req, res) => {
   } catch (err) {
     console.error(err.message);
     res.status(500).send("서버 오류");
+  }
+};
+
+exports.getUsers = async (req, res) => {
+  const { role, page, limit, searchQuery } = req.query;
+  const query = {};
+  if (role) query.role = role;
+  if (searchQuery) query.name = { $regex: searchQuery };
+
+  try {
+    const users = await User.find(query)
+      .skip((page - 1) * limit) // 페이지 번호에 따라 건너뛸 문서 수
+      .limit(limit);
+    console.log(users);
+    res.status(200).json(users);
+  } catch (error) {
+    console.log("상품 읽기 실패 : ", error);
+    res.status(500).json({ message: error.message });
   }
 };

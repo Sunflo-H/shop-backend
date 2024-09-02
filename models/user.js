@@ -4,11 +4,16 @@ const Schema = mongoose.Schema;
 
 // mongoose의 Schema (= require("mongoose").Schema()를 사용하여 상품의 스키마 정의
 const userSchema = new Schema({
-  username: {
+  email: {
     type: String,
     required: true,
     trim: true,
     unique: true,
+  },
+  name: {
+    type: String,
+    required: true,
+    trim: true,
   },
   password: {
     type: String,
@@ -17,8 +22,14 @@ const userSchema = new Schema({
   },
   role: {
     type: String,
-    enum: ["user", "manager"],
+    enum: ["user", "admin"],
     default: "user",
+  },
+  phone: {
+    type: String,
+  },
+  signUpDate: {
+    type: String,
   },
   favoriteList: [
     {
@@ -35,5 +46,5 @@ const userSchema = new Schema({
 });
 
 // 모델 이름은 User, 컬렉션이름은 User 임을 명시적으로 설정
-// module.exports = mongoose.model("User", userSchema, "User"); // 모델을 생성하여 몽고디비 컬렉션과 상호작용
-module.exports = mongoose.model("User", userSchema, "User"); // 모델을 생성하여 몽고디비 컬렉션과 상호작용
+const User = mongoose.model("User", userSchema, "User"); // 모델을 생성하여 몽고디비 컬렉션과 상호작용
+module.exports = User;
