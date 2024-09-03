@@ -37,10 +37,7 @@ app.get("/", (req, res) => {
 
 app.use("/api/user", userRouter);
 app.get("/api/protected-route", auth, (req, res) => {
-  console.log(req.username, 1);
-  res.json({
-    message: `This is a protected route for username: ${req.username}`,
-  });
+  res.json(req.username);
 });
 
 const PORT = 5000;

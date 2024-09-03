@@ -1,8 +1,9 @@
 const Product = require("../models/product");
+const { transformDate } = require("../utils/dateUtils");
 
 exports.getProducts = async (req, res) => {
   const { category, status, page, limit, searchQuery } = req.query;
-
+  console.log(req.query);
   const query = {};
   if (category) query.category = category;
   if (status) query.status = status;
@@ -85,20 +86,6 @@ exports.deleteProducts = async (req, res) => {
   } catch (error) {
     res
       .status(500)
-      .json({ message: "Failed to delete products.", error: error.message });
+      .json({ message: "Failed to update product.", error: error.message });
   }
 };
-
-// exports.searchProducts = async (req, res) => {
-//   const {name} = req.query;
-//   try {
-//     const result = await Product.find()
-//   }
-// }
-
-function transformDate(newDate) {
-  const isoString = newDate.toISOString();
-  const [date, time] = isoString.split("T");
-  const dateAndTime = `${date} ${time.substring(0, 8)}`;
-  return dateAndTime;
-}

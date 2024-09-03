@@ -22,11 +22,11 @@ const userSchema = new Schema({
   },
   role: {
     type: String,
-    enum: ["user", "admin"],
-    default: "user",
+    required: true,
   },
   phone: {
     type: String,
+    required: true,
   },
   signUpDate: {
     type: String,
@@ -48,3 +48,10 @@ const userSchema = new Schema({
 // 모델 이름은 User, 컬렉션이름은 User 임을 명시적으로 설정
 const User = mongoose.model("User", userSchema, "User"); // 모델을 생성하여 몽고디비 컬렉션과 상호작용
 module.exports = User;
+
+function transformDate(newDate) {
+  const isoString = newDate.toISOString();
+  const [date, time] = isoString.split("T");
+  const dateAndTime = `${date} ${time.substring(0, 8)}`;
+  return dateAndTime;
+}
