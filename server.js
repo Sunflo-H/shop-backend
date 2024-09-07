@@ -25,8 +25,7 @@ async function connectToMongoDB() {
     });
     console.log("몽고디비 연결 성공");
   } catch (err) {
-    console.log("몽고디비 연결 실패");
-    console.log("그 에러 원인 : ", err);
+    console.log("몽고디비 연결 실패", err);
   }
 }
 connectToMongoDB();
@@ -42,7 +41,6 @@ const auth = (req, res, next) => {
     req.username = decoded.username; // 토큰에서 유저 ID를 꺼내기
 
     next(); // 다음 미들웨어로 이동
-    console.log(3);
   } catch (err) {
     res.status(401).json({ message: "Token is not valid" }); // 토큰이 유효하지 않음
   }

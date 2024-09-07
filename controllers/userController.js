@@ -119,7 +119,7 @@ exports.deleteUsers = async (req, res) => {
       _id: { $in: idList },
     });
 
-    res.status(200).json({ message: `${result.deletedCount} users deleted.` });
+    res.status(200).json(result.deletedCount);
   } catch (error) {
     res
       .status(500)

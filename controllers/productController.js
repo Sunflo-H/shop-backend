@@ -80,9 +80,7 @@ exports.deleteProducts = async (req, res) => {
       _id: { $in: idList },
     });
 
-    res
-      .status(200)
-      .json({ message: `${result.deletedCount} products deleted.` });
+    res.status(200).json(result.deletedCount);
   } catch (error) {
     res
       .status(500)
