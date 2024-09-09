@@ -6,7 +6,9 @@ const { transformDate } = require("../utils/dateUtils");
 exports.register = async (req, res) => {
   console.log("회원가입");
   try {
+    console.log(req.body);
     const { email, name, password, phone, role } = req.body;
+    console.log(req.body);
     const date = transformDate(new Date());
 
     // 이미 존재하는 사용자인지 확인
@@ -26,9 +28,9 @@ exports.register = async (req, res) => {
       signUpDate: date,
     });
     console.log(user);
-
     // 비밀번호 해싱
     const salt = await bcrypt.genSalt(10);
+
     user.password = await bcrypt.hash(password, salt);
 
     await user.save();
@@ -57,14 +59,15 @@ exports.register = async (req, res) => {
 
 // 로그인
 exports.login = async (req, res) => {
+  console.log("로그인");
   try {
-    const { username, password } = req.body;
+    const { email, password } = req.body;
 
     // 사용자 확인
-    let user = await User.findOne({ username });
+    let user = await User.findOne({ email });
 
     if (!user) {
-      return res.status(400).json({ msg: "Username does not exist" });
+      return res.status(400).json({ msg: "Email does not exist" });
     }
 
     // 비밀번호 확인
@@ -73,7 +76,7 @@ exports.login = async (req, res) => {
       return res.status(400).json({ msg: "Password is incorrect" });
     }
     console.log(user);
-    console.log(user.username);
+    console.log(user.email);
     // JWT 토큰 생성
     jwt.sign(
       { username: user.username },
@@ -94,17 +97,17 @@ exports.login = async (req, res) => {
 };
 
 exports.getUsers = async (req, res) => {
-  const { role, page, limit, searchQuery } = req.query;
-  const query = {};
-  if (role) query.role = role;
-  if (searchQuery) query.name = { $regex: searchQuery };
-  console.log(query);
+  console.log("유저 가져와");
 
   try {
+    const { role, page, limit, searchQuery } = req.query;
+    const query = {};
+    if (role) query.role = role;
+    if (searchQuery) query.name = { $regex: searchQuery };
     const users = await User.find(query)
       .skip((page - 1) * limit) // 페이지 번호에 따라 건너뛸 문서 수
       .limit(limit);
-    console.log(users);
+
     res.status(200).json(users);
   } catch (error) {
     console.log("상품 읽기 실패 : ", error);
@@ -113,6 +116,7 @@ exports.getUsers = async (req, res) => {
 };
 
 exports.deleteUsers = async (req, res) => {
+  console.log("유저 삭제");
   try {
     const idList = req.body;
     const result = await User.deleteMany({
@@ -128,6 +132,7 @@ exports.deleteUsers = async (req, res) => {
 };
 
 exports.updateUser = async (req, res) => {
+  console.log("업데이트");
   try {
     const { id } = req.params;
     const updateData = req.body;
@@ -142,4 +147,12 @@ exports.updateUser = async (req, res) => {
       .status(500)
       .json({ message: "Failed to update user.", error: error.message });
   }
+};
+
+exports.isUser = async (req, res) => {
+  console.log("중복체크");
+  const { email } = req.body;
+
+  const user = await User.find({ email });
+  res.status(200).json(user);
 };
