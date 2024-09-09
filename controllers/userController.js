@@ -79,7 +79,7 @@ exports.login = async (req, res) => {
     console.log(user.email);
     // JWT 토큰 생성
     jwt.sign(
-      { username: user.username },
+      { user },
       "your_jwt_secret", // 실제 프로젝트에서는 환경 변수로 관리해야 합니다
       { expiresIn: 3600 },
       (err, token) => {

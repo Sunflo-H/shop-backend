@@ -4,11 +4,12 @@ const cors = require("cors");
 const bodyParser = require("body-parser");
 const productRouter = require("./routes/product");
 const userRouter = require("./routes/user");
+const jwt = require("jsonwebtoken");
 
 require("dotenv").config();
 
 const app = express();
-const port = process.env.PORT || 80;
+const port = process.env.PORT;
 
 // 미들웨어 선언
 app.use(cors());
@@ -31,14 +32,17 @@ async function connectToMongoDB() {
 connectToMongoDB();
 
 const auth = (req, res, next) => {
-  const token = req.header("Authorization").replace("Bearer ", ""); // 헤더에서 토큰을 꺼내기
-  if (!token) {
-    return res.status(401).json({ message: "No token, authorization denied" }); // 토큰이 없을 때
-  }
-
   try {
+    const token = req.header("Authorization").replace("Bearer ", ""); // 헤더에서 토큰을 꺼내기
+
+    if (!token) {
+      return res
+        .status(401)
+        .json({ message: "No token, authorization denied" }); // 토큰이 없을 때
+    }
     const decoded = jwt.verify(token, "your_jwt_secret"); // 토큰 검증
-    req.username = decoded.username; // 토큰에서 유저 ID를 꺼내기
+
+    req.user = decoded.user; // 토큰에서 유저 ID를 꺼내서 req에 저장
 
     next(); // 다음 미들웨어로 이동
   } catch (err) {
@@ -54,7 +58,7 @@ app.get("/", (req, res) => {
 app.use("/api/product", productRouter);
 app.use("/api/user", userRouter);
 app.get("/api/protected-route", auth, (req, res) => {
-  res.json(req.username);
+  res.json(req.user);
 });
 
 // Start server
