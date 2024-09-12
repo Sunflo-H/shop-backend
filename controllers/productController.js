@@ -87,3 +87,18 @@ exports.deleteProducts = async (req, res) => {
       .json({ message: "Failed to update product.", error: error.message });
   }
 };
+
+exports.getProductsByIdList = async (req, res) => {
+  console.log("아이디들로 상품 가져와 (카트에 쓰임)");
+  try {
+    const idList = req.body;
+    const products = await Product.find({
+      _id: { $in: idList },
+    });
+    res.status(200).json(products);
+  } catch (err) {
+    res
+      .status(500)
+      .json({ message: "Failed to get products by id", error: err.message });
+  }
+};

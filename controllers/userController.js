@@ -75,11 +75,10 @@ exports.login = async (req, res) => {
     if (!isMatch) {
       return res.status(400).json({ msg: "Password is incorrect" });
     }
-    console.log(user);
-    console.log(user.email);
+
     // JWT 토큰 생성
     jwt.sign(
-      { user },
+      { userId: user._id },
       "your_jwt_secret", // 실제 프로젝트에서는 환경 변수로 관리해야 합니다
       { expiresIn: 3600 },
       (err, token) => {
@@ -92,7 +91,7 @@ exports.login = async (req, res) => {
     );
   } catch (err) {
     console.error(err.message);
-    res.status(500).send("서버 오류");
+    res.status(500).send("로그인 서버 오류");
   }
 };
 
@@ -136,6 +135,8 @@ exports.updateUser = async (req, res) => {
   try {
     const { id } = req.params;
     const updateData = req.body;
+    console.log(req.params);
+    console.log(req.body);
     const updatedUser = await User.findOneAndUpdate(
       { _id: id },
       { $set: updateData },
@@ -156,3 +157,33 @@ exports.isUser = async (req, res) => {
   const user = await User.find({ email });
   res.status(200).json(user);
 };
+
+exports.getUserById = async (req, res) => {
+  console.log("아이디로 유저 정보 한개 가져와");
+  try {
+    const { id } = req.params;
+    const user = await User.findById({ _id: id });
+    res.status(200).json(user);
+  } catch (err) {
+    res.status(500).json({ message: "Fail to get user", error: err.message });
+  }
+};
+
+// exports.updateCart = async (req, res) => {
+//   console.log("카트 업데이트");
+
+//   try {
+//     const { id } = req.params;
+//     const productToAddCart = req.body; // {_id, color, size, quantity}
+//     const updatedUser = await User.findOneAndUpdate(
+//       { _id: id },
+//       { $addToSet: { cartList: productToAddCart } }, // 중복체크까지 해줌
+//       { new: true }
+//     );
+//     res.status(200).json(updatedUser);
+//   } catch (error) {
+//     res
+//       .status(500)
+//       .json({ message: "Failed to update user.", error: error.message });
+//   }
+// };

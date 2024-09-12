@@ -2,6 +2,17 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
+const cartItemSchema = new Schema({
+  productId: { type: Schema.Types.ObjectId, ref: "Product", required: true },
+  size: { type: String },
+  color: { type: String },
+  quantity: { type: Number, required: true },
+});
+
+const favoriteItemSchema = new Schema({
+  productId: { type: Schema.Types.ObjectId, ref: "Product", required: true },
+});
+
 // mongoose의 Schema (= require("mongoose").Schema()를 사용하여 상품의 스키마 정의
 const userSchema = new Schema({
   email: {
@@ -31,18 +42,12 @@ const userSchema = new Schema({
   signUpDate: {
     type: String,
   },
-  favoriteList: [
-    {
-      type: Schema.Types.ObjectId,
-      ref: "Product", // Product 컬렉션을 참조
-    },
-  ],
-  cartList: [
-    {
-      type: Schema.Types.ObjectId,
-      ref: "Product", // Product 컬렉션을 참조
-    },
-  ],
+  favoriteList: [favoriteItemSchema],
+  cartList: [cartItemSchema],
+  // favoriteList: [
+  //   { type: Schema.Types.ObjectId, ref: "Product", required: true },
+  // ],
+  // cartList: [{ type: Schema.Types.ObjectId, ref: "Product", required: true }],
 });
 
 // 모델 이름은 User, 컬렉션이름은 User 임을 명시적으로 설정
