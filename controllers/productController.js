@@ -2,13 +2,14 @@ const Product = require("../models/product");
 const { transformDate } = require("../utils/dateUtils");
 
 exports.getProducts = async (req, res) => {
+  console.log("상품리스트에 쓸 상품들 가져와");
   const { category, status, page, limit, searchQuery } = req.query;
-  console.log(req.query);
+  console.log("요청 쿼리 : ", req.query);
   const query = {};
   if (category) query.category = category;
   if (status) query.status = status;
   if (searchQuery) query.name = { $regex: searchQuery };
-
+  console.log(query);
   try {
     const products = await Product.find(query)
       .skip((page - 1) * limit) // 페이지 번호에 따라 건너뛸 문서 수
@@ -21,6 +22,7 @@ exports.getProducts = async (req, res) => {
 };
 
 exports.getProductById = async (req, res) => {
+  console.log("id로 상품 가져와");
   try {
     const product = await Product.findById(req.params.id);
     res.status(200).json(product);
