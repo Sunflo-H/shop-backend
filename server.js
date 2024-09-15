@@ -74,12 +74,12 @@ https.createServer(options, app).listen(443, () => {
   console.log("HTTPS 서버가 실행 중입니다.");
 });
 
-http
-  .createServer((req, res) => {
-    res.writeHead(301, { Location: `https://${req.headers.host}${req.url}` });
-    res.end();
-  })
-  .listen(80); // HTTP는 80번 포트에서 리다이렉트
+// http
+//   .createServer((req, res) => {
+//     res.writeHead(301, { Location: `https://${req.headers.host}${req.url}` });
+//     res.end();
+//   })
+//   .listen(80); // HTTP는 80번 포트에서 리다이렉트
 
 // Start server
 app.listen(port, () => {
