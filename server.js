@@ -5,6 +5,9 @@ const bodyParser = require("body-parser");
 const productRouter = require("./routes/product");
 const userRouter = require("./routes/user");
 const jwt = require("jsonwebtoken");
+const fs = require("fs");
+const http = require("http");
+const https = require("https");
 
 require("dotenv").config();
 
@@ -60,6 +63,23 @@ app.use("/api/user", userRouter);
 app.get("/api/protected-route", auth, (req, res) => {
   res.json(req.userId);
 });
+
+const options = {
+  key: fs.readFileSync("/etc/letsencrypt/live/adonisaws.com/privkey.pem"), // 개인 키 파일
+  cert: fs.readFileSync("/etc/letsencrypt/live/adonisaws.com/fullchain.pem"), // 인증서 파일
+};
+
+// HTTPS 서버 생성
+https.createServer(options, app).listen(443, () => {
+  console.log("HTTPS 서버가 실행 중입니다.");
+});
+
+http
+  .createServer((req, res) => {
+    res.writeHead(301, { Location: `https://${req.headers.host}${req.url}` });
+    res.end();
+  })
+  .listen(80); // HTTP는 80번 포트에서 리다이렉트
 
 // Start server
 app.listen(port, () => {
