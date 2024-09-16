@@ -8,7 +8,7 @@ exports.register = async (req, res) => {
   try {
     console.log(req.body);
     const { email, name, password, phone, role } = req.body;
-    console.log(req.body);
+
     const date = transformDate(new Date());
 
     // 이미 존재하는 사용자인지 확인

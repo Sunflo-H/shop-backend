@@ -94,9 +94,11 @@ exports.getProductsByIdList = async (req, res) => {
   console.log("아이디들로 상품 가져와 (카트에 쓰임)");
   try {
     const idList = req.body;
+    console.log(idList);
     const products = await Product.find({
       _id: { $in: idList },
     });
+    console.log(products);
     res.status(200).json(products);
   } catch (err) {
     res
