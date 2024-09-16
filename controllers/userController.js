@@ -153,6 +153,7 @@ exports.updateUser = async (req, res) => {
 exports.isUser = async (req, res) => {
   console.log("중복체크");
   const { email } = req.body;
+  console.log(email);
 
   const user = await User.find({ email });
   res.status(200).json(user);
@@ -161,6 +162,7 @@ exports.isUser = async (req, res) => {
 exports.getUserById = async (req, res) => {
   console.log("아이디로 유저 정보 한개 가져와");
   try {
+    console.log(req.params);
     const { id } = req.params;
     const user = await User.findById({ _id: id });
     res.status(200).json(user);
@@ -168,22 +170,3 @@ exports.getUserById = async (req, res) => {
     res.status(500).json({ message: "Fail to get user", error: err.message });
   }
 };
-
-// exports.updateCart = async (req, res) => {
-//   console.log("카트 업데이트");
-
-//   try {
-//     const { id } = req.params;
-//     const productToAddCart = req.body; // {_id, color, size, quantity}
-//     const updatedUser = await User.findOneAndUpdate(
-//       { _id: id },
-//       { $addToSet: { cartList: productToAddCart } }, // 중복체크까지 해줌
-//       { new: true }
-//     );
-//     res.status(200).json(updatedUser);
-//   } catch (error) {
-//     res
-//       .status(500)
-//       .json({ message: "Failed to update user.", error: error.message });
-//   }
-// };
