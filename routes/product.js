@@ -13,6 +13,9 @@ const {
 // 모든 상품 가져오기 및 필터링 된 상품 가져오기
 router.get("/", getProducts);
 
+// ID LIST로 상품들 가져오기
+router.post("/idlist", getProductsByIdList);
+
 // 새로운 상품 생성
 router.post("/create", createProduct);
 
@@ -21,9 +24,6 @@ router.post("/update/:id", updateProduct);
 
 // 상품 삭제
 router.delete("/delete", deleteProducts);
-
-// 카트에 담긴 상품들 가져오기
-router.post("/cart", getProductsByIdList);
 
 // 특정 상품 가져오기
 router.get("/:id", getProductById);
