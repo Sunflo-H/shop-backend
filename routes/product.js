@@ -13,7 +13,7 @@ const {
 // 모든 상품 가져오기 및 필터링 된 상품 가져오기
 router.get("/", getProducts);
 
-// ID LIST로 상품들 가져오기
+// ID LIST 로 상품들 가져오기
 router.post("/idlist", getProductsByIdList);
 
 // 새로운 상품 생성

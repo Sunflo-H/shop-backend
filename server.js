@@ -64,15 +64,15 @@ app.get("/api/protected-route", auth, (req, res) => {
   res.json(req.userId);
 });
 
-const options = {
-  key: fs.readFileSync("/etc/letsencrypt/live/adonisaws.com/privkey.pem"), // 개인 키 파일
-  cert: fs.readFileSync("/etc/letsencrypt/live/adonisaws.com/fullchain.pem"), // 인증서 파일
-};
+// const options = {
+//   key: fs.readFileSync("/etc/letsencrypt/live/adonisaws.com/privkey.pem"), // 개인 키 파일
+//   cert: fs.readFileSync("/etc/letsencrypt/live/adonisaws.com/fullchain.pem"), // 인증서 파일
+// };
 
-// HTTPS 서버 생성
-https.createServer(options, app).listen(443, () => {
-  console.log("HTTPS 서버가 실행 중입니다.");
-});
+// HTTPS 서버 생성 , aws 사용시 이걸 사용해
+// https.createServer(options, app).listen(443, () => {
+//   console.log("HTTPS 서버가 실행 중입니다.");
+// });
 
 // http
 //   .createServer((req, res) => {
