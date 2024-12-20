@@ -23,6 +23,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 async function connectToMongoDB() {
   try {
     console.log("몽고디비 연결 시도!");
+    console.log(process.env.MONGODB_URI);
     await mongoose.connect(process.env.MONGODB_URI, {
       useNewUrlParser: true,
       useUnifiedTopology: true,
@@ -53,16 +54,16 @@ const auth = (req, res, next) => {
   }
 };
 
-// app.get("/", (req, res) => {
-//   res.send("hi hello");
-// });
+app.get("/", (req, res) => {
+  res.send("hi hello");
+});
 
 // Routes
 app.use("/api/product", productRouter);
 app.use("/api/user", userRouter);
-app.get("/api/protected-route", auth, (req, res) => {
-  res.json(req.userId);
-});
+// app.get("/api/protected-route", auth, (req, res) => {
+//   res.json(req.userId);
+// });
 
 // const options = {
 //   key: fs.readFileSync("/etc/letsencrypt/live/adonisaws.com/privkey.pem"), // 개인 키 파일
