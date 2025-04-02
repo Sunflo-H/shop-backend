@@ -14,6 +14,8 @@ exports.getProducts = async (req, res) => {
     const products = await Product.find(query)
       .skip((page - 1) * limit) // 페이지 번호에 따라 건너뛸 문서 수
       .limit(limit);
+    console.log(products);
+
     res.status(200).json(products);
   } catch (error) {
     console.log("상품 읽기 실패 : ", error);
