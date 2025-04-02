@@ -9,7 +9,7 @@ exports.getProducts = async (req, res) => {
   if (category) query.category = category;
   if (status) query.status = status;
   if (searchQuery) query.name = { $regex: searchQuery };
-  console.log(query);
+
   try {
     const products = await Product.find(query)
       .skip((page - 1) * limit) // 페이지 번호에 따라 건너뛸 문서 수
