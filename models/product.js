@@ -31,8 +31,9 @@ const productSchema = new Schema({
     type: String,
     required: true,
   },
-  color: [{ type: String, trim: true }],
+  // color: [{ type: String, trim: true }],
   size: [{ type: String, trim: true }],
+  quantity: { type: Number, required: true, min: 0 },
   status: {
     type: String,
     required: true,
