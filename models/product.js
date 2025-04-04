@@ -23,15 +23,12 @@ const productSchema = new Schema({
     required: true,
   },
   createdAt: {
-    // type: Date,
-    // default: Date.now,
     type: String,
   },
   category: {
     type: String,
     required: true,
   },
-  // color: [{ type: String, trim: true }],
   size: [{ type: String, trim: true }],
   quantity: { type: Number, required: true, min: 0 },
   status: {
