@@ -1,19 +1,32 @@
 const Product = require("../models/product");
 const { transformDate } = require("../utils/dateUtils");
 
+// exports.getProducts = async (req, res) => {
+//   console.log("상품리스트에 쓸 상품들 가져와");
+//   const { category, status, page, limit, searchQuery } = req.query;
+//   console.log("요청 쿼리 : ", req.query);
+//   const query = {};
+//   if (category) query.category = category;
+//   if (status) query.status = status;
+//   if (searchQuery) query.name = { $regex: searchQuery };
+
+//   try {
+//     const products = await Product.find(query)
+//       .skip((page - 1) * limit) // 페이지 번호에 따라 건너뛸 문서 수
+//       .limit(limit);
+//     console.log(products);
+
+//     res.status(200).json(products);
+//   } catch (error) {
+//     console.log("상품 읽기 실패 : ", error);
+//     res.status(500).json({ message: error.message });
+//   }
+// };
 exports.getProducts = async (req, res) => {
-  console.log("상품리스트에 쓸 상품들 가져와");
-  const { category, status, page, limit, searchQuery } = req.query;
-  console.log("요청 쿼리 : ", req.query);
-  const query = {};
-  if (category) query.category = category;
-  if (status) query.status = status;
-  if (searchQuery) query.name = { $regex: searchQuery };
+  console.log("상품들 전부 가져와");
 
   try {
-    const products = await Product.find(query)
-      .skip((page - 1) * limit) // 페이지 번호에 따라 건너뛸 문서 수
-      .limit(limit);
+    const products = await Product.find();
     console.log(products);
 
     res.status(200).json(products);
