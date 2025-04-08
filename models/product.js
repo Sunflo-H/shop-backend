@@ -29,13 +29,13 @@ const productSchema = new Schema({
     type: String,
     required: true,
   },
-  // color: [{ type: String, trim: true }],
-  // size: [{ type: String, trim: true }],
-  // quantity: { type: Number, min: 0 },
-  // status: {
-  //   type: String,
-  //   required: true,
-  // },
+  color: [{ type: String, trim: true }],
+  size: [{ type: String, trim: true }],
+  quantity: { type: Number, min: 0 },
+  status: {
+    type: String,
+    required: true,
+  },
 });
 
 // 모델 이름은 Product, 컬렉션이름은 Products 임을 명시적으로 설정
