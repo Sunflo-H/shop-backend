@@ -1,44 +1,52 @@
-const express = require("express");
-const connectDB = require("./mongodb");
-const userRouter = require("./routes/user");
-const cors = require("cors");
-const jwt = require("jsonwebtoken");
+console.log(a); // error - a 라는 변수명은 선언되지 않았다.
+let a = 1;
 
-const app = express();
+console.log(a); // 1
+console.log(b); // undefined
 
-require("dotenv").config();
+var b = 2;
 
-connectDB();
+// const express = require("express");
+// const connectDB = require("./mongodb");
+// const userRouter = require("./routes/user");
+// const cors = require("cors");
+// const jwt = require("jsonwebtoken");
 
-app.use(express.json());
-app.use(cors());
+// const app = express();
 
-const auth = (req, res, next) => {
-  const token = req.header("Authorization").replace("Bearer ", ""); // 헤더에서 토큰을 꺼내기
-  if (!token) {
-    return res.status(401).json({ message: "No token, authorization denied" }); // 토큰이 없을 때
-  }
+// require("dotenv").config();
 
-  try {
-    const decoded = jwt.verify(token, "your_jwt_secret"); // 토큰 검증
-    req.username = decoded.username; // 토큰에서 유저 ID를 꺼내기
+// connectDB();
 
-    next(); // 다음 미들웨어로 이동
-    console.log(3);
-  } catch (err) {
-    res.status(401).json({ message: "Token is not valid" }); // 토큰이 유효하지 않음
-  }
-};
+// app.use(express.json());
+// app.use(cors());
 
-// 기본 라우트
-app.get("/", (req, res) => {
-  res.send("Hello World");
-});
+// const auth = (req, res, next) => {
+//   const token = req.header("Authorization").replace("Bearer ", ""); // 헤더에서 토큰을 꺼내기
+//   if (!token) {
+//     return res.status(401).json({ message: "No token, authorization denied" }); // 토큰이 없을 때
+//   }
 
-app.use("/api/user", userRouter);
-app.get("/api/protected-route", auth, (req, res) => {
-  res.json(req.username);
-});
+//   try {
+//     const decoded = jwt.verify(token, "your_jwt_secret"); // 토큰 검증
+//     req.username = decoded.username; // 토큰에서 유저 ID를 꺼내기
 
-const PORT = 5000;
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+//     next(); // 다음 미들웨어로 이동
+//     console.log(3);
+//   } catch (err) {
+//     res.status(401).json({ message: "Token is not valid" }); // 토큰이 유효하지 않음
+//   }
+// };
+
+// // 기본 라우트
+// app.get("/", (req, res) => {
+//   res.send("Hello World");
+// });
+
+// app.use("/api/user", userRouter);
+// app.get("/api/protected-route", auth, (req, res) => {
+//   res.json(req.username);
+// });
+
+// const PORT = 5000;
+// app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
